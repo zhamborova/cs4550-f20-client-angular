@@ -1,0 +1,9 @@
+a:hover{
+  text-decoration: none;
+
+}
+
+.active a{
+  color: white;
+}
+

@@ -1,0 +1,14 @@
+<div class=" mt-5">
+
+  <h1 class="mb-4 ">
+    <a routerLink="/courses"><fa-icon [icon]="faTimes"
+                class="ml-3 mr-2 "></fa-icon></a>
+    {{course.title}}</h1>
+  <div class="d-flex">
+  <app-module-list class="col-5"></app-module-list>
+  <div class="col-7">
+  <app-lesson-tabs class=""></app-lesson-tabs>
+    <app-topic-pills></app-topic-pills>
+  </div>
+  </div>
+</div>
