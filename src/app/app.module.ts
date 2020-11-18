@@ -15,6 +15,12 @@ import { CourseTableComponent } from './course-table/course-table.component';
 import {LessonService} from "../services/lesson-service";
 import { TopicService } from 'src/services/topic-service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { QuizzesServiceClient } from 'src/services/quiz-service';
+import {QuestionsServiceClient} from "../services/question-service";
+import { QuizzesComponent } from './quizzes/quizzes.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { MultipleChoiceQuestionComponent } from './multiple-choice-question/multiple-choice-question.component';
+import { TrueFalseQuestionComponent } from './true-false-question/true-false-question.component';
 
 
 @NgModule({
@@ -25,6 +31,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     LessonTabsComponent,
     TopicPillsComponent,
     CourseTableComponent,
+    QuizzesComponent,
+    QuizComponent,
+    MultipleChoiceQuestionComponent,
+    TrueFalseQuestionComponent,
 
   ],
   imports: [
@@ -35,7 +45,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule
   ],
   providers: [
-    CourseService, ModuleService, LessonService, TopicService
+    CourseService, ModuleService, LessonService, TopicService, QuizzesServiceClient,
+    QuestionsServiceClient
+
   ],
   bootstrap: [AppComponent]
 })
