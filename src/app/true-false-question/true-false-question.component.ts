@@ -41,9 +41,22 @@ export class TrueFalseQuestionComponent implements OnInit {
       if (this.answerSelected != this.question.correct && this.answerSelected == "false") {
         return 'list-group-item-success';
       }
-
    }
   }
+
+  displayCheckForTrue = () => {
+   if(this.grading ){
+      return !this.correctly && this.answerSelected=='false' || this.correctly && this.answerSelected=='true'
+   }
+  }
+
+  displayCheckForFalse = () => {
+    if(this.grading ){
+      return !this.correctly && this.answerSelected=='true' || this.correctly && this.answerSelected=='false'
+    }
+  }
+
+
 
   displayFalseAnswer = () => {
     if (this.grading) {

@@ -1,9 +1,7 @@
 <p>{{question.question}}
-  <ng-template #showThis>
 
-  </ng-template>
-<fa-icon  *ngIf="!correctly && grading; else showThis" [icon]="faTimes"></fa-icon>
-<fa-icon *ngIf="correctly && grading; else showThis" [icon]="faCheck"></fa-icon>
+<fa-icon  *ngIf="!correctly && grading; " [icon]="faTimes"></fa-icon>
+<fa-icon *ngIf="correctly && grading;" [icon]="faCheck"></fa-icon>
 </p>
 <div class="d-flex tf-div"
      [ngClass]="displayTrueAnswer()"
@@ -18,8 +16,7 @@
   <ng-template #showThis>
 
   </ng-template>
-  <fa-icon  *ngIf="!correctly && grading && answerSelected=='false'; else showThis" [icon]="faCheck"></fa-icon>
-  <fa-icon *ngIf="correctly && grading && answerSelected=='true'; else showThis" [icon]="faCheck"></fa-icon>
+  <fa-icon  *ngIf="displayCheckForTrue()" [icon]="faCheck"></fa-icon>
   <fa-icon *ngIf="!correctly && grading && answerSelected=='true'; else showThis" [icon]="faTimes"></fa-icon>
 </div>
 <div class="d-flex tf-div"
@@ -34,8 +31,7 @@
   <ng-template #showThis>
   </ng-template>
   <fa-icon  *ngIf="!correctly && grading && answerSelected=='false'; else showThis" [icon]="faTimes"></fa-icon>
-  <fa-icon *ngIf="correctly && grading && answerSelected=='false'; else showThis" [icon]="faCheck"></fa-icon>
-  <fa-icon  *ngIf="!correctly && grading && answerSelected=='true'; else showThis" [icon]="faCheck"></fa-icon>
+  <fa-icon *ngIf="displayCheckForFalse()" [icon]="faCheck"></fa-icon>
 
 </div>
 <h5>Your answer:</h5>
