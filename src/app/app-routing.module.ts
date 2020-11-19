@@ -5,7 +5,7 @@ import {CourseTableComponent} from "./course-table/course-table.component";
 import { QuizzesComponent } from './quizzes/quizzes.component';
 import {QuizComponent} from "./quiz/quiz.component";
 
-
+//assignment 8
 const routes: Routes = [
 
   {path: "courses", component: CourseTableComponent},
