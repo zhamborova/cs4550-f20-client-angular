@@ -1,1 +1,48 @@
-<p>true-false-question works!</p>
+<p>{{question.question}}
+  <ng-template #showThis>
+
+  </ng-template>
+<fa-icon  *ngIf="!correctly && grading; else showThis" [icon]="faTimes"></fa-icon>
+<fa-icon *ngIf="correctly && grading; else showThis" [icon]="faCheck"></fa-icon>
+</p>
+<div class="d-flex tf-div"
+     [ngClass]="displayTrueAnswer()"
+     id="{{question._id}}-true">
+
+<input type="radio" value="true"
+       class="true-false"
+       name="{{question._id}}"
+       (click)="selectAnswer($event)"
+       [disabled]="grading">
+  <p class="mb-0 mr-auto">True </p>
+  <ng-template #showThis>
+
+  </ng-template>
+  <fa-icon  *ngIf="!correctly && grading && answerSelected=='false'; else showThis" [icon]="faCheck"></fa-icon>
+  <fa-icon *ngIf="correctly && grading && answerSelected=='true'; else showThis" [icon]="faCheck"></fa-icon>
+  <fa-icon *ngIf="!correctly && grading && answerSelected=='true'; else showThis" [icon]="faTimes"></fa-icon>
+</div>
+<div class="d-flex tf-div"
+     [ngClass]="displayFalseAnswer()">
+  <input type="radio"
+         value="false"
+         class="true-false"
+         name="{{question._id}}"
+         (click)="selectAnswer($event)"
+         [disabled]="grading">
+  <p class="mb-0 mr-auto"> False </p>
+  <ng-template #showThis>
+  </ng-template>
+  <fa-icon  *ngIf="!correctly && grading && answerSelected=='false'; else showThis" [icon]="faTimes"></fa-icon>
+  <fa-icon *ngIf="correctly && grading && answerSelected=='false'; else showThis" [icon]="faCheck"></fa-icon>
+  <fa-icon  *ngIf="!correctly && grading && answerSelected=='true'; else showThis" [icon]="faCheck"></fa-icon>
+
+</div>
+<h5>Your answer:</h5>
+<p>{{answerSelected}}</p>
+<button (click)="grade()"
+        [ngClass]="grading ? 'btn-grey': 'btn-success'"
+        class="form-control  w-25 mr-auto disabled"
+        [disabled]="grading">
+       Grade </button>
+

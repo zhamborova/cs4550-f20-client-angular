@@ -7,8 +7,10 @@ import {faCheck, faTimes} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./multiple-choice-question.component.css']
 })
 export class MultipleChoiceQuestionComponent implements OnInit {
+
+  answer = ""
     ngOnInit(): void {
-        throw new Error("Method not implemented.");
+
     }
 
   @Input()
