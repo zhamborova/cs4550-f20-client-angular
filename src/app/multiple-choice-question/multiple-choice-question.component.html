@@ -3,7 +3,7 @@
   <fa-icon  *ngIf="!correctly && grading" [icon]="faTimes"></fa-icon>
   <fa-icon  *ngIf="correctly && grading" [icon]="faCheck"></fa-icon>
 </p>
-<div class="d-flex tf-div"
+<div class="d-flex mc-div"
      [ngClass]="displayTrueAnswer(qs)"
      id="{{question._id}}-true"
      *ngFor="let qs of question.choices">

@@ -7,7 +7,7 @@ import {QuizComponent} from "./quiz/quiz.component";
 
 
 const routes: Routes = [
-  {path: "", component: CourseTableComponent},
+  {path: "/", component: CourseTableComponent},
   {path: "courses", component: CourseTableComponent},
   {path: "courses/:courseId/modules", component: CourseViewerComponent},
   {path: "courses/:courseId/modules/:moduleId/lessons", component: CourseViewerComponent},
