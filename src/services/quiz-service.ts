@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 
-
+const url = "https://localhost:3000"
 @Injectable()
 export class QuizzesServiceClient {
   findAllQuizzes = () =>
-    fetch('https://node-heroku-zhamborova.herokuapp.com/api/quizzes')
+    fetch(`${url}/api/quizzes`)
       ///dt
       .then(response => response.json())
   findQuizById = (qid) =>
-    fetch(`https://node-heroku-zhamborova.herokuapp.com/api/quizzes/${qid}`)
+    fetch(`${url}/api/quizzes/${qid}`)
       .then(response => response.json())
 }
