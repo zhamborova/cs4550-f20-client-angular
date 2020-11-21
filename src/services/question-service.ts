@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-const url = "https://localhost:3000"
+const url = "https://node-heroku-zhamborova.herokuapp.com"
 @Injectable()
 export class QuestionsServiceClient {
   findQuestionsForQuiz = (qid) =>

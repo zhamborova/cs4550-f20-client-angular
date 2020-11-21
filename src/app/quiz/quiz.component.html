@@ -1,13 +1,21 @@
-<h3 class="mt-4 mb-4">{{quiz.title}}</h3>
+<h3 class="mt-4 mb-4"> {{quiz.title}} </h3>
+<h5>Attempts: {{this.amount}} </h5>
+<h5>Most Recent Score: {{this.score}} </h5>
 <ul class="list-group">
   <li *ngFor="let question of questions" class="list-group-item">
     <div [ngSwitch]="question.type">
       <app-multiple-choice-question
         [question]="question"
+        [(answer)]="question.answer"
         *ngSwitchCase="'MULTIPLE_CHOICE'"></app-multiple-choice-question>
       <app-true-false-question
+        [(answer)]="question.answer"
         [question]="question"
         *ngSwitchCase="'TRUE_FALSE'"></app-true-false-question>
     </div>
   </li>
+  <button routerLink="/courses/{{courseId}}/quizzes/"
+    class="form-control btn-danger w-25 mr-auto ml-auto mt-5" (click)="submitQuiz()">
+    Submit Quiz
+  </button>
 </ul>
