@@ -1,6 +1,6 @@
 #  WhiteBoard Project
 
-A webdev class project: online course management system where faculty can author courses and students can register for online tutorials. Created with React/Java/MySql stack.
+A webdev class project: online course management system where faculty can author courses and students can register for online tutorials. Created with Angular/Node/MongoDB stack.
 
 Faculty View can be found here:
 
@@ -25,6 +25,7 @@ Npm will install all the required packages and npm start will run the start scri
 
 
 ## Features
-* Create/Delete/Update course/modules/lesson/topic
+* View course/modules/lesson/topic
+* Take quizzes 
 
 
